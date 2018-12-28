@@ -562,6 +562,10 @@ h5.t-name{
     color: #F1F1F1;
 }
 
+.s-sidebar__nav ul li a:hover{
+    color: #EB7955;
+}
+
 .s-sidebar__nav-link {
    position: relative;
    display: inline-block;
@@ -574,10 +578,6 @@ h5.t-name{
    top: 50%;
    left: 4em;
    transform: translateY(-50%);
-}
-
-.s-sidebar__nav-link:hover {
-   background: #FFFFFF;
 }
 
 .s-sidebar__nav-link > i {
