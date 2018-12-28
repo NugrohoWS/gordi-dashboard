@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="s-layout">
+    <!-- Sidebar -->
+    <div class="s-layout__sidebar">
+      <a class="s-sidebar__trigger" href="#0">
+         <i class="fa fa-bars"></i>
+      </a>
+
+      <nav class="s-sidebar__nav">
+         <ul>
+              <li><img src="images\gordi-logo1.png" class="gordi-logo"></li>
+            <li>
+               <a class="s-sidebar__nav-link" href="dashboard.html">
+                  <i class="fa fa-home"></i><em>Dashboard</em>
+               </a>
+            </li>
+            <li>
+               <a class="s-sidebar__nav-link" href="#">
+                 <i class="fa fa-user"></i><b><em>My Profile</em></b>
+               </a>
+            </li>
+            <li>
+               <a class="s-sidebar__nav-link" href="#0">
+                 <i class="fas fa-history"></i><em>Order History</em>
+               </a>
+            </li>
+            <li>
+               <a class="s-sidebar__nav-link" href="#0">
+                  <i class="fas fa-times-circle"></i><em>Log Out</em>
+               </a>
+            </li>
+         </ul>
+          <ul>
+              <li class="s-sidebar__nav-link footer">&copy; Gordi 2018</li>
+          </ul>
+      </nav>
+    </div>
+
+    <!-- Content -->
+    <main class="s-layout__content">
+      <section id="dashboard">
+        <div class="column">
+          <div class="row">
+            <h5 class="t-name"><b>My Profile</b></h5>
+          </div>
+          <section id="paid">
+              <div class="row">
+                  <div class="four columns">
+                      <ul>
+                          <li class="prf">
+                              <h6>View / Update Card</h6>
+                              <p>Last 4 digits: 7074<br>
+                                  Expires: 10 / 2023<br>
+                                  Type: Visa<br>
+                              </p>
+                              <button class="button-plan open-modal">Update Card Data</button>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
+        </div>
+      </section>
+    </main>
+</div>
+<div class="modal modal-open">
+  <div class="modal-inner">
+    <div class="modal-content">
+      <div class="modal-content-inner">
+          <div class="row">
+              <div class="one-half column">
+                  <label>Card Number</label>
+                  <input type="text" name="ccn">
+                  <label>Holder Name</label>
+                  <input type="text" name="hname">
+              </div>
+              <div class="one-half column">
+                  <label>CCV</label>
+                  <div class="row">
+                      <input type="text" name="ccv" size="6" class="one-half column ccv" style="margin: 0 8px;">
+                      <img class="one-half column" src="images/icon_visa.png">
+                  </div>
+                  <label>Expiration</label>
+                  <div class="row">
+                    <select>
+                        <option value="">MM</option>
+                        <option value="mm">01</option>
+                    </select>
+                    <select>
+                        <option value="">YY</option>
+                        <option value="yy">01</option>
+                    </select>
+                  </div>
+                </div>
+          </div>
+          <div class="modal-buttons">
+            <button class="button-plan close-modal">Simpan</button>
+            <button class="button-plan close-modal">Cancel</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+<script>
+    var modal = document.querySelector('.modal');
+    var closeButtons = document.querySelectorAll('.close-modal');
+    // set open modal behaviour
+    document.querySelector('.open-modal').addEventListener('click', function() {
+      modal.classList.toggle('modal-open');
+    });
+    // set close modal behaviour
+    for (i = 0; i < closeButtons.length; ++i) {
+      closeButtons[i].addEventListener('click', function() {
+        modal.classList.toggle('modal-open');
+        });
+    }
+    // close modal if clicked outside content area
+    document.querySelector('.modal-inner').addEventListener('click', function() {
+      modal.classList.toggle('modal-open');
+    });
+    // prevent modal inner from closing parent when clicked
+    document.querySelector('.modal-content').addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+</script>
