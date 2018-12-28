@@ -480,7 +480,7 @@ h5.t-name{
 #paid button:hover,
 .popup button:hover,
 .modal-buttons button:hover{
-  background-color: #124F99;
+  background-color: #EB7955;
   color: #fff;
 }
 
@@ -560,10 +560,6 @@ h5.t-name{
 
 .s-sidebar__nav ul li a{
     color: #F1F1F1;
-}
-
-.s-sidebar__nav ul li a:hover{
-    color: #EB7955;
 }
 
 .s-sidebar__nav-link {
